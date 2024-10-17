@@ -1,0 +1,179 @@
+/* استيراد الخطوط من Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+/* إعدادات عامة */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* لضبط الحجم بشكل صحيح */
+}
+
+a {
+    color: #fffce1;
+    font-family: "Lalezar", system-ui;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: normal;
+}
+
+p, h1 {
+    color: #fffce1;
+    font-family: "Lalezar", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* إعدادات الجسم */
+body {
+    background-color: #000;
+}
+
+/* قسم الإعلانات */
+.announcement {
+    background: linear-gradient(to right, #01b507, #d8ff95); /* تدرج اللون من الأخضر إلى الأصفر */
+    color: white; /* لون النص */
+    text-align: center; /* محاذاة النص في المنتصف */
+    padding: 10px 0; /* padding أعلى وأسفل */
+    font-size: 16px; /* حجم الخط */
+}
+
+.announcement p {
+    color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* إعدادات التنقل */
+nav {
+    justify-content: space-between;
+    display: flex;
+    margin: 5px 20px; /* استخدام نفس القيمة للهوامش اليسرى واليمنى */
+    align-items: center;
+}
+
+nav .header {
+    display: flex;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 50px;
+}
+
+nav .join {
+    padding: 10px;
+    font-family: "Cairo", sans-serif;
+    font-weight: 400;
+    border-radius: 18px;
+    border: solid 1px #fffce1;
+}
+
+nav .join:hover {
+    color: #000;
+    background-color: #fffce1;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 40px;
+}
+
+nav ul li a {
+    color: rgb(190, 190, 190);
+}
+
+/* فاصل */
+.divider {
+    border: none; /* إزالة الحدود الافتراضية */
+    height: 1px; /* تحديد ارتفاع الخط */
+    background-color: rgba(255, 255, 255, 0.1); /* لون الخلفية مع الشفافية */
+    margin: 0; /* إزالة الهوامش */
+}
+
+/* إعدادات القسم الرئيسي */
+.main {
+    text-align: center;
+    height: auto;
+    position: relative; /* لضبط المحتوى بشكل صحيح */
+}
+
+.video-background {
+    position: fixed; /* استخدام fixed لجعل الفيديو يغطي الشاشة بالكامل */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* تأكد من أن الفيديو في الخلفية */
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* لتغطية الشاشة بالكامل */
+}
+
+.content {
+    position: absolute; /* استخدام absolute لجعل النص فوق الفيديو */
+    z-index: 1; /* التأكد من ظهور النص فوق الفيديو */
+    color: white; /* لون النص */
+    text-align: center; /* توسيط النص */
+    padding: 20px;
+    top: 100%;   /* لتوسيع المحتوى عموديًا */
+    transform: translateY(-100%); /* للتوسيع */
+}
+
+.main > * {
+    position: relative; /* لجعل المحتوى فوق الخلفية الشفافة */
+    z-index: 3; /* رفع المحتوى فوق الخلفية */
+}
+
+.main h1 {
+    font-size: 80vh; /* حجم كبير للعنوان */
+}
+
+/* استعلامات الوسائط لجعل التصميم متجاوبًا */
+@media (max-width: 768px) {
+    nav h1 {
+        font-size: 30px; /* تقليل حجم الخط للعنوان */
+    }
+    
+    nav ul li {
+        margin-left: 20px; /* تقليل المسافة بين العناصر */
+    }
+    
+    .main h1 {
+        font-size: 50vh; /* تقليل حجم العنوان في الشاشات الصغيرة */
+    }
+
+    .announcement {
+        font-size: 14px; /* حجم خط أصغر للإعلانات */
+    }
+}
+
+@media (max-width: 480px) {
+    nav h1 {
+        font-size: 24px; /* مزيد من تقليل حجم الخط للعنوان */
+    }
+    
+    nav ul li {
+        margin-left: 10px; /* تقليل المسافة بين العناصر بشكل أكبر */
+    }
+    
+    .main h1 {
+        font-size: 40vh; /* مزيد من تقليل حجم العنوان */
+    }
+
+    .announcement {
+        font-size: 12px; /* حجم خط أصغر للإعلانات */
+    }
+
+    .content {
+        padding: 10px; /* تقليل padding للنص فوق الفيديو */
+    }
+}
